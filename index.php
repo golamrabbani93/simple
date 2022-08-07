@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="<?php get_template_directory_uri();?>/<?php echo get_template_directory_uri();?>/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/responsive.css">
+     <?php wp_head(); ?>
 </head>
 <body>
-    <div class="area">
+    <div class="area"  <?php body_class(); ?>>
         <!-- Header Start Here -->
         <div class="header fix">
             <div class="logo">
                 <a href="">
-                    <img src="assets/img/logo.png" alt="Logo">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/img/logo.png" alt="Logo">
                 </a>
             </div>
             <div class="menu">
@@ -33,9 +34,9 @@
         
          <!-- Banner Start Here -->
          <div class="banner owl-carousel">
-            <img src="assets/img/slide1.jpg" alt="Banner">
-            <img src="assets/img/slide2.jpg" alt="Banner">
-            <img src="assets/img/slide3.jpg" alt="Banner">
+            <img src="<?php echo get_template_directory_uri();?>/assets/img/slide1.jpg" alt="Banner">
+            <img src="<?php echo get_template_directory_uri();?>/assets/img/slide2.jpg" alt="Banner">
+            <img src="<?php echo get_template_directory_uri();?>/assets/img/slide3.jpg" alt="Banner">
         </div>
         <!-- Banner End Here -->
 
@@ -47,19 +48,19 @@
             <div class="service fix">
                 <div class="single-service">
                     <h4>service title</h4>
-                    <img src="assets/img/service1.jpg" alt="Service 1">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service1.jpg" alt="Service 1">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
                     <a href="" class="btn">read more</a>
                 </div>
                 <div class="single-service">
                     <h4>service title</h4>
-                    <img src="assets/img/service2.jpg" alt="Service 2">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service2.jpg" alt="Service 2">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
                     <a href="" class="btn">read more</a>
                 </div>
                 <div class="single-service">
                     <h4>service title</h4>
-                    <img src="assets/img/service3.jpg" alt="Service 3">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service3.jpg" alt="Service 3">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
                     <a href="" class="btn">read more</a>
                 </div>
@@ -73,7 +74,7 @@
                 <div class="blogs">
                     <div class="single-blog">
                         <h4><a href="">Blog Title</a></h4>
-                        <img src="assets/img/blog2.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/img/blog2.jpg" alt="">
                         <div class="blog-meta">
                             <a href="">Admin</a><a href="">3 July</a><a href="">Food</a>
                         </div>
@@ -82,7 +83,7 @@
                     </div>    
                     <div class="single-blog">
                         <h4><a href="">Blog Title</a></h4>
-                        <img src="assets/img/blog3.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/img/blog3.jpg" alt="">
                         <div class="blog-meta">
                             <a href="">Admin</a><a href="">3 July</a><a href="">Food</a>
                         </div>
@@ -91,7 +92,7 @@
                     </div> 
                     <div class="single-blog">
                         <h4><a href="">Blog Title</a></h4>
-                        <img src="assets/img/blog3.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/img/blog3.jpg" alt="">
                         <div class="blog-meta">
                             <a href="">Admin</a><a href="">3 July</a><a href="">Food</a>
                         </div>
@@ -100,7 +101,7 @@
                     </div> 
                     <div class="single-blog">
                         <h4><a href="">Blog Title</a></h4>
-                        <img src="assets/img/blog4.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/img/blog4.jpg" alt="">
                         <div class="blog-meta">
                             <a href="">Admin</a><a href="">3 July</a><a href="">Food</a>
                         </div>
@@ -130,8 +131,9 @@
         <!-- Footer End Here -->
     </div>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="<?php echo get_template_directory_uri();?>/assets/js/jquery.min.js"></script>
+    <script src="<?php echo get_template_directory_uri();?>/assets/js/owl.carousel.min.js"></script>
+    <script src="<?php echo get_template_directory_uri();?>/assets/js/main.js"></script>
+    <?php wp_footer();?>
 </body>
 </html>
