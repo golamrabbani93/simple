@@ -1,4 +1,4 @@
-
+        <!--//*call header -->
          <?php get_header(); ?>
          <!-- Banner Start Here -->
          <div class="banner owl-carousel">
@@ -10,7 +10,9 @@
 
         <!-- //*Call Services-part -->
         <?php get_template_part( 'Template-parts/content', 'services' );?>
+
         <!--//*Call Blogs-part -->
         <?php get_template_part( 'Template-parts/content', 'blogs' );?>
-        
-       <?php get_footer(); ?>
+
+        <!--//*call Footer -->
+       <?php get_footer(); ?> 
