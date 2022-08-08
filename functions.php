@@ -58,3 +58,22 @@
 
  }
 add_action('wp_enqueue_scripts', 'style_js');
+
+
+//! Register Sidebar Starts Here
+
+function simple_sidebar() {
+  //*Main Sidebar
+  register_sidebar( array(
+      'name'          => __( 'Main Sidebar', 'simple' ),
+      'id'            => 'sidebar-1',
+      'description'   => __( 'This Is a Main Side Bar.', 'simple' ),
+      'before_widget' => '<div class="single-sidebar">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h4>',
+      'after_title'   => '</h4>',
+  ) );
+}
+add_action( 'widgets_init', 'simple_sidebar' );
+
+//! Register Sidebar Ends Here
