@@ -1,38 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-</head>
-<body>
-    <div class="area">
-        <!-- Header Start Here -->
-        <div class="header fix">
-            <div class="logo">
-                <a href="">
-                    <img src="assets/img/logo.png" alt="Logo">
-                </a>
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- Header End Here -->
+<?php 
+ /*
+  Template Name:Contact Page
+  */
+ get_header();
+ ?>
 
         <!-- Page Banner Start Here -->
-        <div class="page-banner" style="background-image: url('assets/img/page-bannar.jpg');">
+        <div class="page-banner" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/page-bannar.jpg');">
             <h2>contact us</h2>
         </div>
         <!-- Page Banner End Here -->
@@ -66,16 +40,4 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424146.10282421886!2d150.65178800037788!3d-33.84735668745214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129838f39a743f%3A0x3017d681632a850!2sSydney%20NSW%2C%20Australia!5e0!3m2!1sen!2sbd!4v1627334698161!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <!-- Map End Here -->
-
-<!-- Footer Start Here -->
-<div class="footer">
-    <p>&copy; 2021 All rights reserved.</p>
-</div>
-<!-- Footer End Here -->
-</div>
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+ <?php get_footer(); ?>
