@@ -1,4 +1,21 @@
  <?php 
+
+
+ //*Add Theme Support
+
+ function simple_setup(){
+    //!Load Text Domain
+    load_theme_textdomain('simple');
+
+    // !Register Navigation
+    register_nav_menus(array(
+      'main-menu'=>__('Main Menu','Simple'),
+      'footer-menu'=>__('Footer Menu','Simple'),
+    ));
+
+ }
+
+ add_action('after_setup_theme','simple_setup');
  
  //*create css and javascript file hook
 
