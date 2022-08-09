@@ -3,42 +3,28 @@
     <div class="blog-left">
         <h4>latest blog</h4>
         <div class="blogs">
-            <div class="single-blog">
-                <h4><a href="">Blog Title</a></h4>
-                <img src="<?php echo get_template_directory_uri();?>/assets/img/blog2.jpg" alt="">
-                <div class="blog-meta">
-                    <a href="">Admin</a><a href="">3 July</a><a href="">Food</a>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ipsa et vitae necessitatibus delectus nostrum? Sapiente quasi iste quibusdam facilis?</p>
-                <a href="">read more</a>
-            </div>    
-            <div class="single-blog">
-                <h4><a href="">Blog Title</a></h4>
-                <img src="<?php echo get_template_directory_uri();?>/assets/img/blog3.jpg" alt="">
-                <div class="blog-meta">
-                    <a href="">Admin</a><a href="">3 July</a><a href="">Food</a>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ipsa et vitae necessitatibus delectus nostrum? Sapiente quasi iste quibusdam facilis?</p>
-                <a href="">read more</a>
-            </div> 
-            <div class="single-blog">
-                <h4><a href="">Blog Title</a></h4>
-                <img src="<?php echo get_template_directory_uri();?>/assets/img/blog3.jpg" alt="">
-                <div class="blog-meta">
-                    <a href="">Admin</a><a href="">3 July</a><a href="">Food</a>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ipsa et vitae necessitatibus delectus nostrum? Sapiente quasi iste quibusdam facilis?</p>
-                <a href="">read more</a>
-            </div> 
-            <div class="single-blog">
-                <h4><a href="">Blog Title</a></h4>
-                <img src="<?php echo get_template_directory_uri();?>/assets/img/blog4.jpg" alt="">
-                <div class="blog-meta">
-                    <a href="">Admin</a><a href="">3 July</a><a href="">Food</a>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ipsa et vitae necessitatibus delectus nostrum? Sapiente quasi iste quibusdam facilis?</p>
-                <a href="">read more</a>
-            </div>                 
+
+        <?php 
+         
+            if(have_posts()){
+                while(have_posts()){
+                    the_post();
+                
+                ?>
+                    <div class="single-blog">
+                        <h4><a href="<?php the_permalink();?>"> <?php the_title(); ?></a></h4>
+                         <?php echo the_post_thumbnail('', ['class' => 'img-responsive responsive--full', 'title' => 'Feature image']); ?>
+                        <div class="blog-meta">
+                            <a href="">Admin</a><a href="">3 July</a><a href="">Food</a>
+                        </div>
+                        <p> <?php the_excerpt(); ?></p>
+                        <a href="<?php the_permalink();?>">read more</a>
+                    </div>
+                <?php
+                wp_reset_postdata();
+                }
+              }
+         ?>                     
         </div>
     </div>
         <?php get_sidebar(); ?>

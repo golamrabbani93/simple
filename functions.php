@@ -6,6 +6,8 @@
  function simple_setup(){
     //!add Title Dynamic
     add_theme_support('title-tag');
+    //!Suport Post thumbnails
+    add_theme_support('post-thumbnails');
 
 
     //!Load Text Domain
