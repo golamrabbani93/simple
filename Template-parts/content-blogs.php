@@ -15,7 +15,7 @@
                         <h4><a href="<?php the_permalink();?>"> <?php the_title(); ?></a></h4>
                          <?php echo the_post_thumbnail('', ['class' => 'img-responsive responsive--full', 'title' => 'Feature image']); ?>
                         <div class="blog-meta">
-                            <a href="">Admin</a><a href="">3 July</a><a href="">Food</a>
+                            <a href=""><?php  the_author_posts_link(); ?></a><a href="">3 July</a><a href="">Food</a>
                         </div>
                         <p> <?php the_excerpt(); ?></p>
                         <a href="<?php the_permalink();?>">read more</a>
