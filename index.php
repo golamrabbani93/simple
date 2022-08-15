@@ -9,6 +9,9 @@
 
         <!--//*Call Blogs-part -->
         <div class="blogs">
+            <div class="search">
+                 <?php get_search_form() ?>
+            </div>
             <div class="blog-left">
                 <h4>Latest Blog</h4>
                 <div class="blogs">
