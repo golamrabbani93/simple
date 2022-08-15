@@ -16,7 +16,7 @@
                             <?php echo the_post_thumbnail('', ['class' => 'img-responsive responsive--full img-width', 'title' => 'Feature image']); ?>
                             <h4><a href="<?php the_permalink();?>"> <?php the_title(); ?></a></h4>
                             <div class="blog-meta author">
-                            <a href=""><?php  the_author_posts_link(); ?></a><a href=""> <?php the_date('F d') ?></a><a href="">Food</a>
+                            <a href=""><?php echo get_the_author(); ?></a><a href=""> <?php echo the_date('F d') ?></a><a href=""> <?php the_category() ?></a>
                             </div>
                             <div class="single-content"> <?php the_content('',); ?></div>
                             

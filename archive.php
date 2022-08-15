@@ -10,7 +10,7 @@
         <!--//*Call Blogs-part -->
         <div class="blogs">
             <div class="blog-left">
-                <h4>Latest Blog</h4>
+                <h4>Category:  <?php single_cat_title() ?></h4>
                 <div class="blogs">
                     <?php get_template_part( 'Template-parts/content', 'blogs' );?>
                                     
