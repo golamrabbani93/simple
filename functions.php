@@ -8,6 +8,8 @@
     add_theme_support('title-tag');
     //!Suport Post thumbnails
     add_theme_support('post-thumbnails');
+    //!Suport Services Post thumbnails
+    add_theme_support('simple_services');
 
 
     //!Load Text Domain
@@ -83,3 +85,59 @@ function simple_sidebar() {
 add_action( 'widgets_init', 'simple_sidebar' );
 
 //! Register Sidebar Ends Here
+
+/*
+ * Register a custom post type called "Services".
+ *
+ * @see get_post_type_labels() for label keys.
+ */
+
+function simple_services() {
+    $labels = array(
+        'name'                  => __( 'Services', 'Post type general name', 'simple' ),
+        'singular_name'         => __( 'Service', 'Post type singular name', 'simple' ),
+        'menu_name'             => __( 'Services', 'Admin Menu text', 'simple' ),
+        'name_admin_bar'        => __( 'Service', 'Add New on Toolbar', 'simple' ),
+        'add_new'               => __( 'Add New', 'simple' ),
+        'add_new_item'          => __( 'Add New Service', 'simple' ),
+        'new_item'              => __( 'New Service', 'simple' ),
+        'edit_item'             => __( 'Edit Service', 'simple' ),
+        'view_item'             => __( 'View Service', 'simple' ),
+        'all_items'             => __( 'All Services', 'simple' ),
+        'search_items'          => __( 'Search Services', 'simple' ),
+        'parent_item_colon'     => __( 'Parent Services:', 'simple' ),
+        'not_found'             => __( 'No Services found.', 'simple' ),
+        'not_found_in_trash'    => __( 'No Services found in Trash.', 'simple' ),
+        'featured_image'        => __( 'Service Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'simple' ),
+        'set_featured_image'    => __( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'simple' ),
+        'remove_featured_image' => __( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'simple' ),
+        'use_featured_image'    => __( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'simple' ),
+        'archives'              => __( 'Service archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'simple' ),
+        'insert_into_item'      => __( 'Insert into Service', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'simple' ),
+        'uploaded_to_this_item' => __( 'Uploaded to this Service', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'simple' ),
+        'filter_items_list'     => __( 'Filter Services list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'simple' ),
+        'items_list_navigation' => __( 'Services list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'simple' ),
+        'items_list'            => __( 'Services list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'simple' ),
+    );     
+    $args = array(
+        'labels'             => $labels,
+        'description'        => 'Service custom post type.',
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'simple' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'supports'           => array( 'title', 'editor', 'author', 'thumbnail' ),
+        'taxonomies'         => array( 'category', 'post_tag' ),
+        'show_in_rest'       => true,
+        'menu_icon'               =>'dashicons-schedule'
+    );
+      
+    register_post_type( 'services', $args );
+}
+add_action( 'init', 'simple_services' );
