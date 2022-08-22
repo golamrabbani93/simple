@@ -20,7 +20,35 @@
             <div class="blog-left">
                <h4>Author page</h4>
                <div class="blogs">
-               <?php get_template_part( 'Template-parts/content', 'blogs' );?>
+               <!-- //!custom query -->
+                <?php 
+                
+                $args=array(
+                  'post_type'=>'post',
+                  'posts_per_page'=>'2',
+
+                );
+                $query=new WP_Query($args);
+                // The Loop
+                     if ( $query->have_posts()) {
+                        while ( $query->have_posts() ) {
+                           $query->the_post();?>
+                              <div class="single-blog">
+                                    <h4><a href="<?php the_permalink();?>"> <?php the_title(); ?></a></h4>
+                                    <?php echo the_post_thumbnail('', ['class' => 'img-responsive responsive--full', 'title' => 'Feature image']); ?>
+                                    <div class="blog-meta">
+                                       <a href=""><?php  the_author_posts_link(); ?></a><a href=""> <?php the_date('F d') ?></a><a href=""> <?php the_category() ?></a>
+                                    </div>
+                                    <p> <?php the_excerpt(); ?></p>
+                                    <a href="<?php the_permalink();?>">read more</a>
+                              </div>
+                  <?php }
+                       
+                     } 
+                     /* Restore original Post Data */
+                     wp_reset_postdata();
+                
+                ?>
                                     
                </div>
             </div>
