@@ -18,7 +18,7 @@
         <!--//*Call Blogs-part -->
         <div class="blogs">
             <div class="blog-left">
-               <h4>Author page</h4>
+               <h4>Recent-Post</h4>
                <div class="blogs">
                <!-- //!custom query -->
                 <?php 

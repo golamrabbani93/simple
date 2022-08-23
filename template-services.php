@@ -7,7 +7,7 @@
 
         <!-- Page Banner Start Here -->
         <div class="page-banner" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/page-bannar.jpg');">
-            <h2>our services</h2>
+            <h2> <?php wp_title() ?></h2>
         </div>
         <!-- Page Banner End Here -->
         
@@ -17,54 +17,34 @@
                 <h4>exclusive services</h4>
             </div>
             <div class="service service-page fix">
-                <div class="single-service">
-                    <h4>service title</h4>
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service1.jpg" alt="Service 1">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-                    <a href="" class="btn">read more</a>
-                </div>
-                <div class="single-service">
-                    <h4>service title</h4>
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service2.jpg" alt="Service 2">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-                    <a href="" class="btn">read more</a>
-                </div>
-                <div class="single-service">
-                    <h4>service title</h4>
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service3.jpg" alt="Service 3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-                    <a href="" class="btn">read more</a>
-                </div>
-                <div class="single-service">
-                    <h4>service title</h4>
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service1.jpg" alt="Service 3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-                    <a href="" class="btn">read more</a>
-                </div>
-                <div class="single-service">
-                    <h4>service title</h4>
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service2.jpg" alt="Service 3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-                    <a href="" class="btn">read more</a>
-                </div>
-                <div class="single-service">
-                    <h4>service title</h4>
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service3.jpg" alt="Service 3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-                    <a href="" class="btn">read more</a>
-                </div>
-                <div class="single-service">
-                    <h4>service title</h4>
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service1.jpg" alt="Service 3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-                    <a href="" class="btn">read more</a>
-                </div>
-                <div class="single-service">
-                    <h4>service title</h4>
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/service2.jpg" alt="Service 3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-                    <a href="" class="btn">read more</a>
-                </div>
+            <?php 
+                    
+                    $servicesArgs=array(
+                        'post_type'     =>'services',
+                        'posts_per_page'=>6,
+                        'order'         =>'ASC'
+
+                    );
+                    $serviceQuery=new WP_Query($servicesArgs);
+                
+                ?>
+                <?php if ( $serviceQuery->have_posts() ){
+
+                    while ( $serviceQuery->have_posts() ) : $serviceQuery->the_post(); ?>
+                        <div class="single-service">
+                            <h4> <?php the_title() ?></h4>
+                            <?php echo the_post_thumbnail();?>
+                            <?php the_excerpt() ?>
+                            <a href="<?php the_permalink()?>" class="btn">read more</a>
+                        </div>
+
+                    <?php endwhile; 
+
+
+
+
+                    wp_reset_postdata(); 
+                }  ?>
             </div>
         </div>
         <!-- Services End Here -->
